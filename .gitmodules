@@ -1,0 +1,4 @@
+[submodule "YOLO-World_ros"]
+	path = YOLO-World_ros
+	url = git@github.com:yukiharada1228/YOLO-World_ros.git
+	branch = master
