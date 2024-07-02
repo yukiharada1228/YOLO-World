@@ -1,0 +1,18 @@
+services:
+  ultralytics:
+    image: ultralytics/ultralytics:latest
+    container_name: ultralytics_container
+    volumes:
+      - ./yolo_world_val.ipynb:/workspace/yolo_world_val.ipynb
+    working_dir: /workspace
+    shm_size: '512m'
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
+    tty: true
+    stdin_open: true
+    command: /bin/bash
